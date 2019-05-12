@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-
+import  numpy as np
 import  pandas as pd
 
 
@@ -43,7 +43,6 @@ print(df4)
 
 
 
-
 #merage
 df5=pd.merge(df2,df3,left_index=True, right_index=True, how='outer')
 print(df5)
@@ -57,5 +56,76 @@ pony          88   100      100      100       100
 william      100   100      100      100       100
 
 '''
+
+#删除列
+df5=df5.drop(columns=['geograpy'])
+print(df5)
+
+#删行
+df5=df5.drop(index=['pony'])
+print(df5)
+
+
+#删除重复行
+df5=df5.drop_duplicates()
+print(df5)
+
+print("-------------------------")
+
+#列重命名
+df5=df5.rename(columns={'english':'英语'},inplace=True)
+print(df5)
+
+
+
+
+
+data3={'science':['100 ','100 ','100 '],'geograpy':['100','100','100']}
+df6=DataFrame(data3,index=['jack','pony','william'],columns=['science','geograpy'])
+print(df6)
+
+#前后去空格
+df6['science'] = df6['science'].map(str.strip)
+print(df6)
+
+#转换类型
+df6['science'] = df6['science'].astype(np.int32);
+df6['geograpy'] = df6['geograpy'].astype(np.int32);
+print(df6)
+#数组长度
+print(df6['science'].shape)
+#数组类型
+print(df6['geograpy'].dtype)
+
+print("----------空值判断-----------------")
+
+data4={'science':['a','a ','b'],'geograpy':['c','d','c']}
+df7=DataFrame(data4,index=['jack','pony','william'],columns=['science','geograpy'])
+print(df7)
+#输出空值
+print(df7.isnull)
+print(df7.isnull().any())
+
+print(df7['science'].apply(str.upper))
+
+
+
+print("--------------apply 函数的使用---------------")
+data5={'science':[100,100,100],'geograpy':[100,100,100]}
+df8=DataFrame(data3,index=['jack','pony','william'],columns=['science','geograpy'])
+
+def plus(x):
+    return int(x)+10
+
+df8['science'] = df8['science'].apply(plus)
+print(df8)
+
+
+
+
+
+
+
+
 
 
