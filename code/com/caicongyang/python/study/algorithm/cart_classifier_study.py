@@ -25,9 +25,7 @@ clf = clf.fit(train_features, train_labels)
 # 用cart  做分类预测额
 test_predict = clf.predict(test_features)
 
-#预测结果与测试集做对比
-score = accuracy_score(test_labels,test_predict)
+# 预测结果与测试集做对比
+score = accuracy_score(test_labels, test_predict)
 
-print('CART分类树准确率 %.4lf'% score)
-
-
+print('CART分类树准确率 %.4lf' % score)
