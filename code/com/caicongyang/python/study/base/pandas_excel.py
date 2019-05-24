@@ -2,10 +2,8 @@
 # -*- coding: UTF-8 -*-
 
 
-import  pandas as pd
-from  pandas import  Series,DataFrame
-
-
+import pandas as pd
+from pandas import Series, DataFrame
 
 '''
 result 
@@ -16,12 +14,7 @@ result
 
 '''
 
-
-
-filePath='/Users/caicongyang/PycharmProjects/pandas_test_data.xlsx'
-score=DataFrame(pd.read_excel(filePath))
+filePath = '/Users/caicongyang/PycharmProjects/pandas_test_data.xlsx'
+score = DataFrame(pd.read_excel(filePath))
 score.to_excel(filePath)
 print(score)
-
-
-
