@@ -1,6 +1,12 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+"""
+决策树
+CART 算法
+练习demo
+"""
+
 
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
